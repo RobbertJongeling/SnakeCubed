@@ -14,3 +14,14 @@ SnakeCubed/build
   built-jar.properties
   + classes/
   + empty/
+
+SnakeCubed/dist/
+SnakeCubed/dist-linux-amd64/
+SnakeCubed/dist-linux-i586/
+SnakeCubed/dist-macosx-ppc/
+SnakeCubed/dist-macosx-universal/
+SnakeCubed/dist-solaris-i586/
+SnakeCubed/dist-solaris-sparc/
+SnakeCubed/dist-solaris-sparcv9/
+SnakeCubed/dist-windows-amd64/
+SnakeCubed/dist-windows-i586/
