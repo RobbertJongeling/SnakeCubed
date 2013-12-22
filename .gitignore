@@ -4,3 +4,13 @@
 *.jar
 *.war
 *.ear
+
+SnakeCubed/nbproject
+  build-impl.xml
+  + private/
+  + project.properties
+  + project.xml
+SnakeCubed/build
+  built-jar.properties
+  + classes/
+  + empty/
