@@ -28,6 +28,8 @@ public class Renderer extends AbstractRenderer {
     private CamType camType = CamType.DYNAMIC;
     private ColorScheme colors = ColorScheme.NORMAL;
 
+    private boolean rasterDensity = true;
+    
     public Renderer(GLAutoDrawable drawable, Controller controller, World world) {
         super(drawable, controller);
         this.world = world;
@@ -144,8 +146,9 @@ public class Renderer extends AbstractRenderer {
     }
 
     private void drawCubes(int dim, GL gl, int q, float r, float g, float b) {
-        for (int i = 0; i < world.getDimension(); i++) {
-            for (int j = 0; j < world.getDimension(); j++) {
+        int raster = this.rasterDensity ? 2 : 1;
+        for (int i = 0; i < world.getDimension(); i+=raster) {
+            for (int j = 0; j < world.getDimension(); j+=raster) {
                 gl.glPushMatrix();
                 switch (dim) {
                     case 0:
@@ -220,7 +223,10 @@ public class Renderer extends AbstractRenderer {
                         colors = schemes[(i + 1) % schemes.length];
                         break;
                     }
-                }
+                }               
+                break;
+            case 'r':
+                this.rasterDensity = !this.rasterDensity;
                 break;
             case 'q':
                 controller.die();
